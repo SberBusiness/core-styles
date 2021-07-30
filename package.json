@@ -6,7 +6,7 @@
   "description": "Библиотека корневых стилей СберБизнес",
   "scripts": {
     "build": "node ./tools/copyDir.js && node ./tools/copyPackage.js",
-    "publish": "npm run build && npm publish --access public ./out"
+    "publish": "npm run build && npm publish --access public ./out/@sberbusiness/core-styles"
   },
   "repository": {
     "type": "git",
