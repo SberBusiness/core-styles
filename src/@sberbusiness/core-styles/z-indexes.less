@@ -1,0 +1,63 @@
+// Что бы не было пересечений элементов по z-index, используется пошаговая, относительная система.
+// НеИспользованныеВWebLibrary - означает отсутствие использования в @sbbol/web-library, но заблаговременно резервированные на основе опыта.
+
+
+// Шаг интервалов между z-индексами элементов.
+@z-index-step: 100;
+
+// Большой стартовый z-индекс.
+@z-index-super: 10000;
+
+/* #region НеИспользованныеВWebLibrary */
+@z-index-table-float-panel: @z-index-step; // 100
+@z-index-fixed-row-main-nav: @z-index-table-float-panel + @z-index-step; // 200
+@z-index-row-main-nav: @z-index-fixed-row-main-nav + @z-index-step; // 300
+@z-index-navbar: @z-index-row-main-nav + @z-index-step; // 400
+
+/* #endregion НеИспользованныеВWebLibrary */
+
+// Dropdown
+@z-index-dropdown: @z-index-navbar + @z-index-step; // 500
+
+/* #region НеИспользованныеВWebLibrary */
+@z-index-navbar-fixed: @z-index-dropdown + @z-index-step; // 600
+@z-index-help-container: @z-index-navbar-fixed + @z-index-step; // 700
+
+/* #endregion НеИспользованныеВWebLibrary */
+
+// DatePicker
+@z-index-popover: @z-index-help-container + @z-index-step; // 800
+
+// не занято 900
+
+/* #region НеИспользованныеВWebLibrary */
+@z-index-tutorial: @z-index-popover + @z-index-step * 2; // 1000
+@z-index-lightbox-popup: @z-index-tutorial + @z-index-step; // 1100
+@z-index-search-popup: @z-index-lightbox-popup + @z-index-step; // 1200
+
+/* #endregion НеИспользованныеВWebLibrary */
+
+// LightBox
+@z-index-lightbox: @z-index-search-popup + @z-index-step; // 1300
+// LightBoxHeader - локальный z-index внутри LightBox
+@z-index-lightbox-header: @z-index-step; // 100
+// LightBoxFooter - локальный z-index внутри LightBox
+@z-index-lightbox-footer: @z-index-step; // 100
+// LightBoxControls - локальный z-index внутри LightBox
+@z-index-lightbox-controls: @z-index-step; // 100
+// LightBoxTopOverlay - локальный z-index внутри LightBox
+@z-index-lightbox-top-overlay: @z-index-lightbox-header + @z-index-step; // 200
+
+// ModalWindow
+@z-index-modal-window: @z-index-lightbox + @z-index-step; // 1400
+
+// Элементы с самым большим z-index:
+
+// Tooltip
+@z-index-tooltip: @z-index-super; // 10000
+
+// SpinnerWidget
+@z-index-spinner-widget: @z-index-tooltip + @z-index-step; //10100
+
+// UploadZone
+@z-index-upload-zone-fullscreen: @z-index-spinner-widget + @z-index-step; //10200

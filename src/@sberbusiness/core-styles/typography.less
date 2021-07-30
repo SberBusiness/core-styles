@@ -1,0 +1,193 @@
+@import './colors';
+
+@ufs-theme-default-text-color: @color-graphite-01;
+
+@font-size-30: 30px;
+@font-size-21: 21px;
+@font-size-18: 18px;
+@font-size-16: 16px;
+@font-size-14: 14px;
+@font-size-12: 12px;
+@font-size-10: 10px;
+
+@font-weight-400: 400;
+@font-weight-600: 600;
+@font-weight-900: 900;
+
+.line-height-by-font-size(@size) when (@size = @font-size-30) { @result: 40px; }
+.line-height-by-font-size(@size) when (@size = @font-size-21) { @result: 32px; }
+.line-height-by-font-size(@size) when (@size = @font-size-18) { @result: 28px; }
+.line-height-by-font-size(@size) when (@size = @font-size-16) { @result: 24px; }
+.line-height-by-font-size(@size) when (@size = @font-size-14) { @result: 20px; }
+.line-height-by-font-size(@size) when (@size = @font-size-12) { @result: 16px; }
+.line-height-by-font-size(@size) when (@size = @font-size-10) { @result: 12px; }
+
+.font-size(@size) when (@size = @font-size-30),
+(@size = @font-size-21),
+(@size = @font-size-18),
+(@size = @font-size-16),
+(@size = @font-size-14),
+(@size = @font-size-12),
+(@size = @font-size-10) {
+    font-size: @size;
+    line-height: .line-height-by-font-size(@size) [@result];
+}
+
+.font-weight(@weight) when (@weight = @font-weight-400),
+(@weight = @font-weight-600),
+(@weight = @font-weight-900) {
+    font-weight: @weight;
+}
+
+// Для однострочных элеменотов вроде полей ввода или кнопок - соответствие высоты строки и размера шрифта иное.
+.line-height-by-font-size-inline(@size) when (@size = @font-size-14) { @result: 16px; }
+
+.font-size-inline(@size) when (@size = @font-size-14) {
+    font-size: @size;
+    line-height: .line-height-by-font-size-inline(@size) [@result];
+}
+
+.font-medium () {
+    .font-weight(@font-weight-600);
+
+    font-family: 'SBSansUI', 'Arial', sans-serif;
+    font-style: normal;
+}
+
+.font-regular () {
+    .font-weight(@font-weight-400);
+
+    font-family: 'SBSansUI', 'Arial', sans-serif;
+    font-style: normal;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h1-header-main () {
+    .font-medium();
+    .font-size(@font-size-21);
+
+    text-transform: none;
+    color: @color-graphite-01;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h2-header-balance () {
+    .font-medium();
+    .font-size(@font-size-30);
+
+    text-transform: none;
+    color: @color-graphite-01;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h3-header-balance-details () {
+    .font-regular();
+    .font-size(@font-size-21);
+
+    text-transform: none;
+    color: @color-graphite-01;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h4-header-main-modal () {
+    .font-regular();
+    .font-size(@font-size-18);
+
+    text-transform: none;
+    color: @color-graphite-01;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h5-header-form(@color) when (@color = @color-graphite-01),
+(@color = @color-snowy) {
+    .font-medium();
+    .font-size(@font-size-16);
+
+    text-transform: none;
+    color: @color;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.h6-header-table () {
+    .font-regular();
+    .font-size(@font-size-12);
+
+    text-transform: uppercase;
+    color: @color-asphalt-01;
+    margin: 0;
+    padding: 0;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.b1-text-main(@color) when (@color = @color-graphite-01),
+(@color = @color-asphalt-01),
+(@color = @color-asphalt-02),
+(@color = @color-asphalt-03),
+(@color = @color-snowy),
+(@color = @color-sky-01),
+(@color = @color-sky-02),
+(@color = @color-malachite-02) {
+    .font-regular();
+    .font-size(@font-size-14);
+
+    text-transform: none;
+    color: @color;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.b2-text-controls-normal(@color) when (@color = @color-graphite-01),
+(@color = @color-graphite-02),
+(@color = @color-asphalt-01),
+(@color = @color-snowy) {
+    .font-regular();
+    .font-size-inline(@font-size-14);
+
+    text-transform: none;
+    color: @color;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.b3-text-controls-medium(@color) when (@color = @color-graphite-01),
+(@color = @color-graphite-02),
+(@color = @color-asphalt-01),
+(@color = @color-snowy) {
+    .font-medium();
+    .font-size-inline(@font-size-14);
+
+    text-transform: none;
+    color: @color;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.b4-text-info(@color) when (@color = @color-graphite-01),
+(@color = @color-asphalt-01),
+(@color = @color-ruby-01),
+(@color = @color-sky-02),
+(@color = @color-malachite-02),
+(@color = @color-sky-04),
+(@color = @color-snowy) {
+    .font-regular();
+    .font-size(@font-size-12);
+
+    text-transform: none;
+    color: @color;
+}
+
+/** @deprecated Используйте компоненты Typography. */
+.s1-bubbles () {
+    .font-regular();
+    .font-size(@font-size-10);
+
+    text-transform: uppercase;
+    color: @color-graphite-01;
+}

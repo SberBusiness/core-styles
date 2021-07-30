@@ -1,0 +1,19 @@
+{
+  "name": "@sberbusiness/core-styles",
+  "version": "5.2.1",
+  "author": "СберБизнес",
+  "license": "Sber Public License at-nc-sa v.2",
+  "description": "Библиотека корневых стилей СберБизнес",
+  "scripts": {
+    "build": "node ./tools/copyDir.js && node ./tools/copyPackage.js",
+    "publish": "npm run build && npm publish --access public ./out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SberBusiness/core-styles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SberBusiness/core-styles/issues"
+  },
+  "homepage": "https://github.com/SberBusiness/core-styles#readme"
+}
