@@ -13,14 +13,7 @@
 @z-index-fixed-row-main-nav: @z-index-table-float-panel + @z-index-step; // 200
 @z-index-row-main-nav: @z-index-fixed-row-main-nav + @z-index-step; // 300
 @z-index-navbar: @z-index-row-main-nav + @z-index-step; // 400
-
-/* #endregion НеИспользованныеВWebLibrary */
-
-// Dropdown
-@z-index-dropdown: @z-index-navbar + @z-index-step; // 500
-
-/* #region НеИспользованныеВWebLibrary */
-@z-index-navbar-fixed: @z-index-dropdown + @z-index-step; // 600
+@z-index-navbar-fixed: @z-index-navbar + @z-index-step * 2; // 600
 @z-index-help-container: @z-index-navbar-fixed + @z-index-step; // 700
 
 /* #endregion НеИспользованныеВWebLibrary */
@@ -50,6 +43,9 @@
 
 // ModalWindow
 @z-index-modal-window: @z-index-lightbox + @z-index-step; // 1400
+
+// Dropdown
+@z-index-dropdown: @z-index-modal-window + @z-index-step; // 1500
 
 // Элементы с самым большим z-index:
 
